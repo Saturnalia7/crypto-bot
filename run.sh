@@ -1,7 +1,7 @@
 
 
 python3 src/agent.py \
-    --price 2410 \
+    --price 2452 \
     --entry 2193.12 \
     --capital 2993 \
     --ticker ETH

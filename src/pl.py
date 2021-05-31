@@ -13,24 +13,18 @@ class Bank:
 
 
 class Trade:
-    '''
-    args
-        ticker: symbol for cryptocurrency. str.
-        currency: 
-    '''
     def __init__(self, ticker, entry, price, capital, currency='USD'):
         self.ticker = ticker
+        self.currency = currency
         self.entry = entry
         self.capital = capital
         self.current_price = price
-        self.currency = currency
         pass
 
     def get_pl(self):
-        # entry = 2193.12
-        # capital = 2993
         self.delta = ((self.current_price - self.entry)/self.entry)
         self.pl =  self.delta * self.capital
+
         self.adj_delta = self.delta - 0.0016 * 2 # Kraken maker fee
         self.adj_pl = self.adj_delta * self.capital
 
